@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layoutDescription="@xml/fragment_info"
+    tools:context=".presentation.FilmInfoFragment">
+
+    <ImageView
+        android:id="@+id/filmImage"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_error_placeholder" />
+
+    <View
+        android:id="@+id/gradient_overlay"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:background="@drawable/gradient_overlay"
+        app:layout_constraintBottom_toBottomOf="@+id/filmImage"
+        app:layout_constraintEnd_toEndOf="@+id/filmImage"
+        app:layout_constraintStart_toStartOf="@+id/filmImage"
+        app:layout_constraintTop_toTopOf="@+id/filmImage"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/filmRateText"
+        android:layout_width="25dp"
+        android:maxLines="1"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="12dp"
+        tools:text="7.5"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/filmImage"
+        app:layout_constraintEnd_toEndOf="@+id/gradient_overlay" />
+
+    <ImageView
+        android:id="@+id/filmRateIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_star"
+        app:layout_constraintBottom_toTopOf="@+id/filmRateText"
+        app:layout_constraintEnd_toEndOf="@+id/filmRateText"
+        app:layout_constraintStart_toStartOf="@+id/filmRateText"
+        app:tint="@color/white" />
+
+    <TextView
+        android:id="@+id/filmTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="12dp"
+        tools:text="Во все тяжкие"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filmImage" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filmTitle">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/filmDesc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Описание фильма"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
